@@ -1,23 +1,31 @@
-
 syntax on
 syntax enable
 set t_Co=256
 set termguicolors
 set background=dark
 colorscheme onedark
-
+" :help highlight-groups
 "highlight NonText guifg=#686783
-highlight VertSplit guifg=#6272a4
+highlight Normal ctermbg=NONE guibg=NONE
+highlight VertSplit guifg=#abb2bf guibg=none
+hi Floaterm guibg=none
+hi FloatermBorder guibg=none guifg=#ABB2BF
 "highlight TermCursor cterm=reverse
-"highlight Normal ctermbg=NONE guibg=NONE
-"highlight SignColumn ctermbg=NONE guibg=#68678"3
-
+highlight LineNr ctermbg=NONE guibg=#282c34
+highlight CursorLineNr ctermbg=NONE guibg=#282c34
+"highlight Cursor ctermfg=235 ctermbg=39 guifg=#282c34 guibg=#61afef
+highlight SignColumn ctermbg=NONE guibg=#282c34
 " Spell checking {{{
-
 hi SpellBad cterm=underline
 hi SpellLocal cterm=underline
 hi SpellRare cterm=underline
 hi SpellCap cterm=underline
-
 " }}}
 
+nmap <C-k> :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+    if !exists("*synstack")
+        return
+    endif
+    echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunction

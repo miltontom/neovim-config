@@ -4,11 +4,11 @@
 
 " Auto-cursor highlighting (Inactive) {{{
 
-"augroup BgHighlight
-    "autocmd!
-    "autocmd WinEnter * set cul
-    "autocmd WinLeave * set nocul
-"augroup END
+augroup BgHighlight
+    autocmd!
+    autocmd WinEnter * set cul
+    autocmd WinLeave * set nocul
+augroup END
 
 " }}}
 
@@ -66,10 +66,24 @@ augroup END
 " }}}
 
 " Filetype autocommands
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType css setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType c setlocal shiftwidth=4 tabstop=4 expandtab
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 expandtab
+autocmd FileType python setlocal shiftwidth=4 tabstop=4 expandtab
 
-"au VimEnter * NERDTree
 
 " go to the position I was when last editing the file
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" :h keycodes
+autocmd filetype c nnoremap // I//<Esc>
+autocmd filetype c vnoremap // s/*<CR><Bs>*/<Esc><Left>P
+
+autocmd FileType * set formatoptions-=cro
+
+autocmd InsertLeave * set nopaste
+
+autocmd filetype c nnoremap <F9> :w <bar> !gcc % -o %:r<CR>
+autocmd filetype c nnoremap <F10> :!%:r<CR>
+autocmd filetype c nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $

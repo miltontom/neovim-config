@@ -5,12 +5,11 @@
 " Leader keys {{{
 
 let mapleader=" " "\<Space>
-"let maplocalleader="j"
+let maplocalleader=","
 
 " }}}
 
 " Escape mode mapping {{{
-
 inoremap jj <Esc>
 inoremap jk <Esc>
 
@@ -45,24 +44,24 @@ nnoremap <Leader>tv :tabnew $MYVIMRC<CR>
 
 " }}}
 
+
 " Character surround (NORMAL/VISUAL) {{{
 
-"nnoremap ' ciw''<Esc>P
-"nnoremap " ciw""<Esc>P
-"nnoremap ( ciw()<Esc>P
-"nnoremap [ ciw[]<Esc>P
-"nnoremap { ciw{}<Esc>P
+nnoremap ' ciw''<Esc>P
+nnoremap " ciw""<Esc>P
+nnoremap ( ciw()<Esc>P
+nnoremap [ ciw[]<Esc>P
+nnoremap { ciw{}<Esc>P
 
-"vnoremap ' s''<Esc>P
-"vnoremap " s""<Esc>P
-"vnoremap ( s()<Esc>P
-"vnoremap [ s[]<Esc>P
-"vnoremap { s{}<Esc>P
+vnoremap ' s''<Esc>P
+vnoremap " s""<Esc>P
+vnoremap ( s()<Esc>P
+vnoremap [ s[]<Esc>P
+vnoremap { s{}<Esc>P
 
 " }}}
 
 " Highlighting last inserted lines/characters {{{
-
 nnoremap <Leader>v `[v`]
 
 " }}}
@@ -125,10 +124,16 @@ nmap <leader>l <C-w>l
 
 " Adjusting split size {{{
 
-nnoremap <silent> <C-Left> :vertical resize +3<CR>
-nnoremap <silent> <C-Right> :vertical resize -3<CR>
-nnoremap <silent> <C-Up> :resize +3<CR>
-nnoremap <silent> <C-Down> :resize -3<CR>
+nnoremap <silent> <C-Left> :vertical resize -3<CR>
+nnoremap <silent> <C-Right> :vertical resize +3<CR>
+nnoremap <silent> <C-Up> :resize -3<CR>
+nnoremap <silent> <C-Down> :resize +3<CR>
+
+" Resize window
+"nmap <C-w><Left> <C-w><
+"nmap <C-w><Right> <C-w>>
+"nmap <C-w><up> <C-w>+
+"nmap <C-w><down> <C-w>-
 
 " }}}
 
@@ -141,12 +146,12 @@ nnoremap <leader>tk <C-w>t<C-w>K
 
 " Move to first and last character in a line {{{
 
-nnoremap ml $
-nnoremap mf ^
+nnoremap <A-e> $
+nnoremap <A-a> ^
 "nnoremap mf 0
 
-vnoremap ml $
-vnoremap mf ^
+vnoremap <A-e> $
+vnoremap <A-a> ^
 "vnoremap mf 0
 
 " }}}
@@ -179,6 +184,9 @@ nnoremap bp :bprev<CR>
 nnoremap bf :bfirst<CR>
 nnoremap bl :blast<CR>
 
+nmap <silent><Tab> :bnext<CR>
+nmap <silent><S-Tab> :bprev<CR>
+
 " }}}
 
 " toggle signcolumn {{{
@@ -188,26 +196,12 @@ map <leader>sn :set signcolumn=no<CR>
 
 " }}}
 
-" Highlight all ctrl + a {{{
-
-map <leader>sa <Esc>ggVG<CR>
-
-" }}}
-
 " Code Folding {{{
 
 " fold code
 nnoremap <leader>z za
 nnoremap <leader>c zM
 nnoremap <leader>o zR
-
-
-" }}}
-
-" Abbreviations {{{
-
-imap ;ne <Esc>/;<CR>a
-imap ;so system.out.println();<Left><Left>
 
 
 " }}}
@@ -227,13 +221,7 @@ cnoremap kk <C-u>
 
 " SpellCheck {{{
 
-map <F5> :setlocal spell!<CR>
-
-" }}}
-
-" NERDTree {{{
-
-map <C-n> :NERDTreeToggle<CR>
+"map <F5> :setlocal spell!<CR>
 
 " }}}
 
@@ -246,6 +234,55 @@ noremap k gk
 " }}}
 
 " force minimum windows width
-set winwidth=110
+"set winwidth=110
 
 nnoremap <leader>vv <C-q>
+
+" Compile & run C/C++ program [:help expand()]
+"nmap <silent><F10> :!gcc %:t -o %:t:r && %:t:r.exe<CR>
+
+"nnoremap <tab> %
+
+" Stop auto commenting
+"set formatoptions-=cro
+
+" Multiline commenting
+"vnoremap // s/*<CR>*/<Esc><Left>P
+"nnoremap // I//<Esc>
+
+" Cursor movement in insert mode
+inoremap <C-j> <Left>
+inoremap <C-k> <Right>
+inoremap <C-a> <C-o>^
+inoremap <C-e> <C-o>$
+
+" Replaces the word under the cursor for whatever you want, press . it will keep substituting
+" all the instances of the original word.
+nnoremap <Leader>x *``cgn
+nnoremap <Leader>X #``cgN
+
+" Increment/Decrement
+nnoremap + <C-a>
+nnoremap - <C-x>
+
+xnoremap + g<C-a>
+xnoremap - g<C-x>
+
+" Select all
+nmap <C-a> gg<S-v>G
+
+" Split window
+nmap ss :split<Return><C-w>w
+nmap sv :vsplit<Return><C-w>w
+
+" Terminal
+tmap <C-\> <C-\><C-n>
+nnoremap <leader>t :term<CR>
+
+" Delete without yank
+nnoremap <leader>d "_d
+nnoremap x "_x
+
+" Delete a word backwards
+nnoremap <localleader>dw vb"_d
+

@@ -1,4 +1,8 @@
-
-command! Filename execute ":echo expand('%:p')"
+command! Filepath execute ":echo expand('%:p')"
+command! PrettyMe execute "normal! gg=G"
 command! Config execute ":tabnew $MYVIMRC"
-
+command! Reload execute "source $MYVIMRC"
+command! Dblines execute ":g/^$/d"
+command! Car execute ":FloatermNew gcc %:t -o %:t:r && %:t:r.exe<CR>"
+command! Vt execute ":vsplit | terminal"
+command! Ht execute ":split | terminal"
