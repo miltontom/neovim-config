@@ -8,4 +8,7 @@ augroup neovim_terminal
     autocmd TermOpen * nnoremap <buffer> <C-c> i<C-c>
 augroup END
 
+command! Vt execute ":vsplit | terminal"
+command! Ht execute ":split | terminal"
+
 "autocmd TermOpen * setlocal nonumber norelativenumber
