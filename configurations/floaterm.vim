@@ -7,7 +7,7 @@ let g:floaterm_width=0.75
 let g:floaterm_height=0.9
 let g:floaterm_autoclose=1
 "let g:floaterm_title=' floaterm: $1 of $2 '
-let g:floaterm_title='─[$1/$2]'
+let g:floaterm_title=0
 " Spawning terminal
 nnoremap <silent> <A-t> :FloatermNew<CR>
 nnoremap <silent> <F9> :FloatermToggle<CR>

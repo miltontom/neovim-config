@@ -84,6 +84,6 @@ autocmd FileType * set formatoptions-=cro
 
 autocmd InsertLeave * set nopaste
 
-autocmd filetype c nnoremap <F9> :w <bar> !gcc % -o %:r<CR>
-autocmd filetype c nnoremap <F10> :!%:r<CR>
+"autocmd filetype c nnoremap <F9> :w <bar> !gcc % -o %:r<CR>
+"autocmd filetype c nnoremap <F10> :!%:r<CR>
 autocmd filetype c nnoremap <C-C> :s/^\(\s*\)/\1\/\/<CR> :s/^\(\s*\)\/\/\/\//\1<CR> $
