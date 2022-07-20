@@ -47,17 +47,17 @@ nnoremap <Leader>tv :tabnew $MYVIMRC<CR>
 
 " Character surround (NORMAL/VISUAL) {{{
 
-nnoremap ' ciw''<Esc>P
-nnoremap " ciw""<Esc>P
-nnoremap ( ciw()<Esc>P
-nnoremap [ ciw[]<Esc>P
-nnoremap { ciw{}<Esc>P
+"nnoremap ' ciw''<Esc>P
+"nnoremap " ciw""<Esc>P
+"nnoremap ( ciw()<Esc>P
+"nnoremap [ ciw[]<Esc>P
+"nnoremap { ciw{}<Esc>P
 
-vnoremap ' s''<Esc>P
-vnoremap " s""<Esc>P
-vnoremap ( s()<Esc>P
-vnoremap [ s[]<Esc>P
-vnoremap { s{}<Esc>P
+"vnoremap ' s''<Esc>P
+"vnoremap " s""<Esc>P
+"vnoremap ( s()<Esc>P
+"vnoremap [ s[]<Esc>P
+"vnoremap { s{}<Esc>P
 
 " }}}
 

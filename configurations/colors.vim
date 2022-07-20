@@ -10,10 +10,11 @@ highlight Normal ctermbg=NONE guibg=NONE
 highlight VertSplit guifg=#abb2bf guibg=none
 hi Floaterm guibg=none
 hi FloatermBorder guibg=none guifg=#ABB2BF
-"highlight TermCursor cterm=reverse
+highlight TermCursor cterm=reverse gui=reverse
 highlight LineNr ctermbg=NONE guibg=#282c34
 highlight CursorLineNr ctermbg=NONE guibg=#282c34
-"highlight Cursor ctermfg=235 ctermbg=39 guifg=#282c34 guibg=#61afef
+highlight Cursor gui=reverse cterm=reverse
+highlight Cursor ctermfg=235 ctermbg=39 gui=reverse guifg=none guibg=none
 highlight SignColumn ctermbg=NONE guibg=#282c34
 " Spell checking {{{
 hi SpellBad cterm=underline
