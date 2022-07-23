@@ -70,8 +70,8 @@ set smartindent
 
 "set gcr=a:blinkon25
 "set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver25-Cursor2/lCursor2,r-cr:hor20,o:hor50
-set guicursor=n-v-c:block-Cursor-blinkon1
-set guicursor+=i:ver100-iCursor-blinkon1
+set guicursor=n-v-c:block-Cursor-blinkoff0
+set guicursor+=i:ver100-iCursor-blinkoff0
 "set guicursor=n-i:blinkon1
 set mouse=a
 set mousehide
@@ -116,3 +116,4 @@ nnoremap <F12> :set list!<CR>
 set listchars=space:·,tab:»·,eol:$
 
 " ------ }}}
+

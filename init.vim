@@ -3,6 +3,7 @@
 let g:python3_host_prog='C:\Python310\python.exe'
 
 source ~\AppData\Local\nvim\configurations\vim-plug.vim
+source ~\AppData\Local\nvim\configurations\treesitter.lua
 source ~\AppData\Local\nvim\configurations\colors.vim
 "source ~\AppData\Local\nvim\configurations\ultisnips.vim
 source ~\AppData\Local\nvim\configurations\floaterm.vim

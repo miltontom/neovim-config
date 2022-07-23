@@ -22,7 +22,8 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "let g:airline_symbols.maxlinenr = ' '
 "let g:airline_symbols.linenr = ' :'
 
-"let g:airline_stl_path_style = 'long'
+let g:airline_stl_path_style = 'short'
 " % - %3p%%
 "%{strftime("%d %b %Y")}
 "let g:airline_section_z = '%{strftime("%d %b %Y")}  %l,%c'
+let g:airline_section_z = '%3P%   %l:%c'
