@@ -3,6 +3,7 @@ syntax enable
 set t_Co=256
 set termguicolors
 set background=dark
+"colorscheme onedark
 colorscheme onedark
 " :help highlight-groups
 "highlight NonText guifg=#686783
@@ -11,9 +12,9 @@ highlight VertSplit guifg=#abb2bf guibg=none
 hi Floaterm guibg=none
 hi FloatermBorder guibg=none guifg=#ABB2BF
 highlight LineNr ctermbg=NONE guibg=#282c34
-highlight CursorLineNr ctermbg=NONE guibg=#282c34
-highlight Cursor gui=reverse cterm=reverse
-highlight Cursor ctermfg=235 ctermbg=39 gui=reverse guifg=none guibg=none
+highlight CursorLineNr guibg=#282c34
+"highlight Cursor guibg=#61afef guifg=#282c34
+highlight Cursor guibg=#ffffff guifg=#282c34
 highlight SignColumn ctermbg=NONE guibg=#282c34
 
 
